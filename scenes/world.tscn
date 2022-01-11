@@ -1,0 +1,943 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/sky_box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/objects/lowpolytree.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.0666667, 0.333333, 0.0470588, 1 )
+
+[sub_resource type="CubeMesh" id=2]
+material = SubResource( 1 )
+size = Vector3( 500, 2, 500 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 250, 1, 250 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.00392157, 0.721569, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.160784, 0.160784, 0.160784, 1 )
+
+[node name="world" type="Spatial"]
+
+[node name="floor" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -20 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="mesh" type="MeshInstance" parent="floor"]
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="shape" type="CollisionShape" parent="floor"]
+shape = SubResource( 3 )
+
+[node name="sun" type="DirectionalLight" parent="."]
+transform = Transform( 0.455351, 0.214759, 0.864022, -0.3755, -0.833607, 0.405092, 0.807252, -0.508899, -0.298942, 0, 3.7895, 0 )
+light_color = Color( 0.878431, 0.705882, 0.345098, 1 )
+shadow_enabled = true
+directional_shadow_max_distance = 8192.0
+
+[node name="sky_box" parent="." instance=ExtResource( 1 )]
+
+[node name="trees" type="Spatial" parent="."]
+
+[node name="tree_wall" type="Spatial" parent="trees"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.1404, 0, 0 )
+
+[node name="tree" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 0 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree2" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 7.95072 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree3" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -9.54892 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree4" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 29.0109 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree5" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 36.9616 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree6" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 19.4619 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree7" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -28.9859 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree8" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -21.0352 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree9" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -38.5348 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree10" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 84.9602 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree11" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 92.9109 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree12" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 75.4112 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree13" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 113.971 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree14" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 121.922 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree15" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 104.422 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree16" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 55.9743 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree17" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 63.925 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree18" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 46.4254 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree19" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -86.0714 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree20" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -78.1206 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree21" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -95.6203 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree22" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -57.0605 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree23" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -49.1098 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree24" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -66.6094 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree25" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -115.057 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree26" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -107.107 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree27" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -124.606 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree28" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -140.579 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree29" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -132.628 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree30" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -150.128 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree31" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -162.93 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree32" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -154.98 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree33" type="MeshInstance" parent="trees/tree_wall"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -172.479 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree_wall2" type="Spatial" parent="trees"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -15.5075, 0, -45.0324 )
+
+[node name="tree" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 0 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree2" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 7.95072 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree3" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -9.54892 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree4" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 29.0109 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree5" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 36.9616 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree6" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 19.4619 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree7" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -28.9859 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree8" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -21.0352 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree9" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -38.5348 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree10" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 84.9602 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree11" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 92.9109 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree12" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 75.4112 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree13" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 113.971 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree14" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 121.922 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree15" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 104.422 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree16" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 55.9743 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree17" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 63.925 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree18" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 46.4254 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree19" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -86.0714 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree20" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -78.1206 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree21" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -95.6203 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree22" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -57.0605 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree23" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -49.1098 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree24" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -66.6094 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree25" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -115.057 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree26" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -107.107 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree27" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -124.606 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree28" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -140.579 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree29" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -132.628 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree30" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -150.128 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree31" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -162.93 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree32" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -154.98 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree33" type="MeshInstance" parent="trees/tree_wall2"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -172.479 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree_wall3" type="Spatial" parent="trees"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -21.692, 0, -1.24306 )
+
+[node name="tree" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 0 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree2" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 7.95072 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree3" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -9.54892 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree4" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 29.0109 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree5" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 36.9616 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree6" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 19.4619 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree7" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -28.9859 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree8" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -21.0352 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree9" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -38.5348 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree10" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 84.9602 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree11" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 92.9109 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree12" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 75.4112 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree13" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 113.971 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree14" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 121.922 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree15" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 104.422 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree16" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 55.9743 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree17" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 63.925 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree18" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 46.4254 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree19" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -86.0714 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree20" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -78.1206 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree21" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -95.6203 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree22" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -57.0605 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree23" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -49.1098 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree24" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -66.6094 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree25" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -115.057 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree26" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -107.107 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree27" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -124.606 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree28" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -140.579 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree29" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -132.628 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree30" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -150.128 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree31" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -162.93 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree32" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -154.98 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree33" type="MeshInstance" parent="trees/tree_wall3"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -172.479 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree_wall4" type="Spatial" parent="trees"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 23.5479, 0, -41.2433 )
+
+[node name="tree" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 0 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree2" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 7.95072 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree3" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -9.54892 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree4" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 29.0109 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree5" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 36.9616 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree6" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 19.4619 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree7" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -28.9859 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree8" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -21.0352 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree9" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -38.5348 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree10" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 84.9602 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree11" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 92.9109 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree12" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 75.4112 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree13" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 113.971 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree14" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 121.922 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree15" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 104.422 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree16" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, 55.9743 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree17" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, 63.925 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree18" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, 46.4254 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree19" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -86.0714 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree20" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -78.1206 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree21" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -95.6203 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree22" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -57.0605 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree23" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -49.1098 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree24" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -66.6094 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree25" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -115.057 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree26" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -107.107 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree27" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -124.606 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree28" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -140.579 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree29" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -132.628 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree30" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -150.128 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree31" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 142.268, 19, -162.93 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree32" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 161.268, 25, -154.98 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree33" type="MeshInstance" parent="trees/tree_wall4"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 183.648, 29, -172.479 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree_corner" type="Spatial" parent="trees"]
+
+[node name="tree" type="MeshInstance" parent="trees/tree_corner"]
+transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 160.476, 34, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree2" type="MeshInstance" parent="trees/tree_corner"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 191.678, 38, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree3" type="MeshInstance" parent="trees/tree_corner"]
+transform = Transform( 2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 191.678, 38, 172.233 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree_corner2" type="Spatial" parent="trees"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -363.103 )
+
+[node name="tree" type="MeshInstance" parent="trees/tree_corner2"]
+transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 160.476, 34, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree2" type="MeshInstance" parent="trees/tree_corner2"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 191.678, 38, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree3" type="MeshInstance" parent="trees/tree_corner2"]
+transform = Transform( 2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 191.678, 38, 172.233 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree_corner3" type="Spatial" parent="trees"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -362.171, 0, -363.103 )
+
+[node name="tree" type="MeshInstance" parent="trees/tree_corner3"]
+transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 160.476, 34, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree2" type="MeshInstance" parent="trees/tree_corner3"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 191.678, 38, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree3" type="MeshInstance" parent="trees/tree_corner3"]
+transform = Transform( 2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 191.678, 38, 172.233 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree4" type="MeshInstance" parent="trees/tree_corner3"]
+transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 160.476, 34, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree_corner4" type="Spatial" parent="trees"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -362.171, 0, 7.07407 )
+
+[node name="tree" type="MeshInstance" parent="trees/tree_corner4"]
+transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 160.476, 34, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree2" type="MeshInstance" parent="trees/tree_corner4"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 191.678, 38, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree3" type="MeshInstance" parent="trees/tree_corner4"]
+transform = Transform( 2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 191.678, 38, 172.233 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )
+
+[node name="tree4" type="MeshInstance" parent="trees/tree_corner4"]
+transform = Transform( 1.8, 0, 0, 0, 1.8, 0, 0, 0, 1.8, 160.476, 34, 142.831 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 4 )
+material/1 = SubResource( 5 )

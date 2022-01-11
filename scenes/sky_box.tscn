@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 150, 50, 0 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 150, 0, 150 )
+
+[node name="sky_box" type="StaticBody"]
+
+[node name="wall1" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, -150 )
+shape = SubResource( 1 )
+
+[node name="wall2" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 150 )
+shape = SubResource( 1 )
+
+[node name="wall3" type="CollisionShape" parent="."]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -150, 50, 0 )
+shape = SubResource( 1 )
+
+[node name="wall4" type="CollisionShape" parent="."]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 150, 50, 0 )
+shape = SubResource( 1 )
+
+[node name="roof" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0 )
+shape = SubResource( 2 )
